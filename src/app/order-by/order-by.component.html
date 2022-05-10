@@ -1,0 +1,62 @@
+<select [(ngModel)]="colName">
+    <option value="trainId">ID</option>
+    <option value="trainType">Type</option>
+    <option value="trainRoute">Route</option>
+</select>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Route</th>
+            <th>Ticket</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of train | orderBy : colName: true">
+            <td>{{item.trainId}}</td>
+            <td>{{item.trainType}}</td>
+            <td>{{item.trainRoute}}</td>
+            <td>{{item.trainTicket}}</td>
+            <td>{{item.date}}</td>
+        </tr>
+    </tbody>
+
+</table>
+
+
+
+<!-- ================== Assignment ================================== -->
+<h1>Assignment</h1>
+<!-- Put OrderBy pipe on train array in new table. 
+Default order on trainId
+1. When u click on column 1st time : order should be ascending
+2. When u click on same column again : order should be opposite of previous order 
+
+Hint : This logic can be done in single line only. using ! operator -->
+
+
+<table>
+    <thead>
+        <tr>
+            <th (click)="arraySort('trainId')">ID</th>
+            <th (click)="arraySort('trainType')">Type</th>
+            <th (click)="arraySort('trainRoute')">Route</th>
+            <th (click)="arraySort('trainTicket')">Ticket</th>
+            <th (click)="arraySort('date')">Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of train | orderBy : colName: orderby">
+            <td>{{item.trainId}}</td>
+            <td>{{item.trainType}}</td>
+            <td>{{item.trainRoute}}</td>
+            <td>{{item.trainTicket}}</td>
+            <td>{{item.date}}</td>
+        </tr>
+    </tbody>
+
+</table>

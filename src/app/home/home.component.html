@@ -1,0 +1,18 @@
+<div class="component-wrapper">
+    <div class="container">
+        <div class="row cards">
+            <div class="col-md-4" *ngFor="let product of products">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>{{product.title}}</h4>
+                        <div class="card-body">
+                            <img src={{product.image}}>
+                            <h6 class="price">RS {{product.price}}</h6>
+                            <p>{{product.discription}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

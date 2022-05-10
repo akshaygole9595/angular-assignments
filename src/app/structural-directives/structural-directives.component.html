@@ -1,0 +1,31 @@
+<table>
+    <thead>
+        <tr>
+            <td>Name</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let name of names">
+            <td>{{name}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<span>============================================================================</span>
+
+<table>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Price</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books; let i = index">
+            <td>{{book.id}}</td>
+            <td>{{book.bName}}</td>
+            <td>{{book.price}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,24 @@
+<div class="field">
+    <label for="maths">Maths</label>
+    <input type="text" name="maths" [(ngModel)]="maths">
+</div>
+<div class="field">
+    <label for="physics">Physics</label>
+    <input type="text" name="physics" [(ngModel)]="physics">
+</div>
+<div class="field">
+    <label for="chemistry">Chemistry</label>
+    <input type="text" name="chemistry" [(ngModel)]="chemistry">
+</div>
+
+
+<button (click)="getResult()">Submit</button>
+
+
+<div>Result: {{percentage}}</div>
+<div [ngSwitch]="true">
+    <p *ngSwitchCase="percentage >= 70">DISTINCTION</p>
+    <p *ngSwitchCase="percentage >= 60 && percentage <= 69">FIRST CLASS</p>
+    <p *ngSwitchCase="percentage >= 40 && percentage <= 59">PASS</p>
+    <p *ngSwitchCase="percentage < 40">PASS</p>
+</div>

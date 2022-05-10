@@ -1,0 +1,101 @@
+<section>
+    <h2 class="w-50 mx-auto"> REGISTRATION FORM </h2>
+    <form class="w-50 mx-auto" [formGroup]="registerForm" (submit)="submitForm()" novalidate>
+
+        <label>Enter Name</label>
+        <input type="text" formControlName="name"><br>
+        <div *ngIf="name.touched && name.invalid" class="text-danger">
+            <div *ngIf="name.errors?.['required']">
+                <b>Name is required</b>
+            </div>
+            <div *ngIf="name.errors?.['pattern']">
+                <b>Name should contain only alphabets</b>
+            </div>
+        </div>
+         <br>
+        
+        <label>Enter Email Id</label>
+        <input type="email" formControlName="emailId"><br>
+        <div *ngIf="email.touched && email.invalid" class="text-danger">
+            <div *ngIf="email.errors?.['required']">
+                <b>Email is required</b>
+            </div>
+        </div>
+        <br>
+        
+        <label>Enter Contact Number</label>
+        <input type="tel" formControlName="contactNumber"> <br>
+        <div *ngIf="contact.touched && contact.invalid" class="text-danger">
+            <div *ngIf="contact.errors?.['required']">
+                <b>Contact number is required</b>
+            </div>
+            <div *ngIf="contact.errors?.['pattern']">
+                <b>Mobile number must contain only digits and must have 10 digits</b>
+            </div>
+        </div>
+        <br>
+        
+        <label>Enter Age</label>
+        <input type="number" formControlName="userAge"><br>
+        
+        <div *ngIf="age.touched && age.invalid" class="text-danger">
+            <div *ngIf="age.errors?.['required']">
+                <b>Age is required</b>
+            </div>
+            <div *ngIf="age.errors?.['min']">
+                <b>Age should be greater than or equal to 16</b>
+            </div>
+            <div *ngIf="age.errors?.['max']">
+                <b>Age should be less than or equal to 55</b>
+            </div>
+        </div><br>
+        
+        <label>Set Username</label>
+        <input type="text" formControlName="userName"> <br>
+        <div *ngIf="username.touched && username.invalid" class="text-danger">
+            <div *ngIf="username.errors?.['required']">
+                <b>Username is required</b>
+            </div>
+            <div *ngIf="username.errors?.['pattern']">
+                <b>Username should be 3 to 15 characters long</b>
+            </div>
+        </div>
+        <br>
+        
+        <label>Set Password</label>
+        <input type="password" formControlName="password"><br>
+        
+        <div *ngIf="pass.touched && pass.invalid" class="text-danger">
+            <div *ngIf="pass.errors?.['required']">
+                <b>Password is required</b>
+            </div>
+            <div *ngIf="pass.errors?.['minlength']">
+                <b>Password should be minimum 6 characters long</b>
+            </div>
+            <div *ngIf="pass.errors?.['maxlength']">
+                <b>Password should be maximum 12 characters long</b>
+            </div>
+            <div *ngIf="pass.errors?.['pattern']">
+                <b>Password should contain atleast one </b>
+                <ul>
+                    <li>capital letter</li>
+                    <li>small letter</li>
+                    <li>digit</li>
+                    <li>special symbol</li>
+                </ul>
+            </div>
+        </div><br>
+        
+        <label>Confirm Password</label>
+        <input type="password" formControlName="confirmPassword" [style.border]="(cpassword.touched && !registerForm.errors?.['mismatch'])?'2px solid green':'2px solid red'"><br>
+        <div *ngIf="registerForm.invalid" class="text-danger">
+            <div *ngIf="cpassword.touched && registerForm.errors?.['mismatch']">
+                <b>Confirm Password and Password should match</b>
+            </div>
+        </div>
+        <br>
+        
+        <input type="submit" value="REGISTER">
+        <input type="reset">
+    </form>
+</section>

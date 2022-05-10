@@ -1,0 +1,26 @@
+<section>
+    <div class="form-wrapper">
+        <h2 class="title">LOGIN</h2>
+        <form [formGroup]="loginForm" (submit)="submitForm()">
+  
+            <div class="form-field form-floating">
+                <input type="text" class="form-control" id="floatingInput" placeholder="username"
+                    formControlName="userName">
+                <label for="floatingInput">Enter Username</label>
+            </div>
+            <div class="form-field form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="password"
+                formControlName="password">
+                <label for="floatingPassword">Enter Password</label>
+            </div>
+
+            <div class="btn-wrapper">
+                <input class="btn btn-primary" type="submit" value="LOGIN">
+                <input class="btn btn-danger" type="reset" value="RESET">
+            </div>
+
+        </form>
+    </div>
+
+    <p class="result" *ngIf="submittedData">Submitted Response: {{submittedData | json}}</p>
+</section>

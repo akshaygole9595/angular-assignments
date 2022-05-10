@@ -1,0 +1,21 @@
+.row.cards {
+    margin-top: 3rem;
+
+    .card {
+        margin-top: 2rem;
+        padding: 1rem;
+
+        .card-body {
+            .price {
+                font-size: 22px;
+                font-weight: bold;
+                margin: 10px 0;
+            }
+            img {
+                max-width: 100%;
+                max-height: 200px;
+            }
+        }
+
+    }
+}

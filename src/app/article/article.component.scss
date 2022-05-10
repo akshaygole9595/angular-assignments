@@ -1,0 +1,32 @@
+.article-wrapper {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.img-wrapper {
+    width: 50%;
+    float: left;
+    padding: 0 30px 10px 0;
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.text-wrapper {
+    p {
+        font-size: 18px;
+        text-align: justify;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .img-wrapper {
+        width: 100%;
+        float: unset;
+    }
+}

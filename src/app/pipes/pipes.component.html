@@ -1,0 +1,27 @@
+<!-- 
+    Display Train Array : trainId, trainType, trainRoute, constructDate, trainTicket
+    trainType : UpperCase
+    trainRoute: lowecase
+    trainTicker : INR currency
+    constructDate : FULL Date
+ -->
+
+ <div class="container my-5 ">
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Route</th>
+            <th>Ticket</th>
+            <th>Date</th>
+        </tr>
+        <tr *ngFor="let item of train">
+            <td>{{item.trainId}}</td>
+            <td>{{item.trainType | uppercase}}</td>
+            <td>{{item.trainRoute | lowercase}}</td>
+            <td>{{item.trainTicket | currency : 'INR'}}</td>
+            <td>{{item.date | date : 'fullDate'}}</td>
+        </tr>
+    </table>
+
+</div>
