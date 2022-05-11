@@ -10,11 +10,16 @@ import { NgSwitchComponent } from './ng-switch/ng-switch.component';
 import { OrderByComponent } from './order-by/order-by.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
+import { ArticleComponent } from './article/article.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent
+  },
+  {
+    path: 'article',
+    component: ArticleComponent 
   },
   {
     path: 'data-binding',
